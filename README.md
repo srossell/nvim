@@ -10,45 +10,44 @@ So far tested under linux (debian)
 sudo apt-get install neovim
 ```
 
-The python support was installed with the recomended packages.
+## Installing vim-plug. A plugin manaager.
 
-## Using YouCompleteMe plugin
+[vim-plug](https://github.com/junegunn/vim-plug)
 
-To get YouCompleteMe (YCM) to work with my "main" conda repository, I added
-this line to my init.vim file (located at ~/.config/nvim)
-
-```
-let g:python3_host_prog='/home/me/anaconda3/envs/main/bin/python'
-```
-
-After adding that line, I followed YCM's
-[instructions](https://github.com/ycm-core/YouCompleteMe#linux-64-bit) on
-installing dependencies.
-
-Thereafter I created a start directory:
+Just copy the Neovim curl command.
 
 ```
-mkdir -p ~/.config/pack/bundle/start
+sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
+       https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
 ```
 
-Inside which I cloned the YCM
-[repository](https://github.com/ycm-core/YouCompleteMe). You will need to run:
+Once vim-plug has been installed, you need to create a configuration file, that
+for nvim should be located at `~/.config/nvim/init.vim`.
 
+Add the following lines: (you are free to choose the location of your plugins)
 ```
-git submodule update --init --recursive
-```
+call plug#begin('~/.local/share/nvim/plugged')
 
-Make sure that you activate the conda environment before running:
-
-```
-python ./install.py --all
+call plug#end()
 ```
 
-Last, inside nvim, add the package:
+Between those lines above you add the plugins. To install the plugins you need
+run `:PlugInstall`
+
+
+# Installing conquer of code
+
+[coc](https://github.com/neoclide/coc.nvim/wiki/Install-coc.nvim)
+
+First we need to install node >= 12.12. I tried coc's instructions using curl,
+but failed because of some permissions. `apt-get` will install an old version.
+I found this [site](https://www.digitalocean.com/community/tutorials/how-to-install-node-js-on-ubuntu-20-04). Which advise worked for me:
 
 ```
-:packadd YouCompleteMe
+cd ~
+curl -sL https://deb.nodesource.com/setup_16.x -o nodesource_setup.sh
+sudo bash nodesource_setup.sh
 ```
-
-
+To install coc packages run `CocInstall <package-name>`. For
+Python the package is `coc-pyright`
 
