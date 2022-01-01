@@ -2,6 +2,8 @@
 
 set encoding=utf-8
 set noswapfile
+set nobackup
+set nowritebackup
 syntax enable
 set autoindent
 set fileformat=unix
@@ -33,22 +35,30 @@ set foldlevel=9
 set vb
 " Always display the status line
 set laststatus=2
+" Allow to change buffers without svaing them. i.e. hiding the buffer
+set hidden
+
 " ----- FOR vim-plug
 call plug#begin('~/.local/share/nvim/plugged')
 
+" A popular colorscheme
 Plug 'morhetz/gruvbox'
 " Intellisense engine
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
+" Browse through buffers with [b and ]b
+Plug 'tpope/vim-unimpaired'
 
 call plug#end()
 " ----- FOR vim-plug
 
-colorscheme gruvbox
+" ----- FOR coc
+nmap <silent> gd <Plug>(coc-definition)
+nmap <silent> gy <Plug>(coc-type-definition)
+nmap <silent> gi <Plug>(coc-implementation)
+nmap <silent> gr <Plug>(coc-references)
+" ----- FOR coc
 
-" OLD DELETE
-" soft text wrap, visually but no new lines created
-" set wrap
-" set linebreak
-" set textwidth=80
-" set ruler
+
+
+colorscheme gruvbox
 
