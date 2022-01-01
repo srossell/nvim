@@ -51,3 +51,9 @@ sudo bash nodesource_setup.sh
 To install coc packages run `CocInstall <package-name>`. For
 Python the package is `coc-pyright`
 
+# Some packages I've installed.
+
+I installed [vim-impaired](https://github.com/tpope/vim-unimpaired), which maps the square brackets "[" and "]" to iterate between, for example, buffers. To the next buffer you type `]b`, to go the previous: `[b`. The the first `[B` and to the last `]B`. It works with other things (e.g. quickfix lists), which I am unfamiliar with.
+
+
+
