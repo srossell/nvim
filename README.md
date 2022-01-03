@@ -48,6 +48,11 @@ cd ~
 curl -sL https://deb.nodesource.com/setup_16.x -o nodesource_setup.sh
 sudo bash nodesource_setup.sh
 ```
+The above includes the more recent nodejs in your apt index. To install run an ordinary apt-get:
+```
+sudo apt install nodejs
+```
+
 To install coc packages run `CocInstall <package-name>`. For
 Python the package is `coc-pyright`
 
