@@ -62,7 +62,8 @@ I installed [vim-impaired](https://github.com/tpope/vim-unimpaired), which maps 
 
 # TROUBLESHOOTING
 
-In one of my installations, I had to use the directory: `~./local/share/` as the place to put the `plug.vim` script. In the same installation, the conquer of code (coc) failed with the message: `build/index.js not found`. I tried running the `npm install` in the `coc.vim` directory (It is a directory, I thought it was a file). But npm gave me an error.
+220827. In one of my installations, I had to use the directory: `~./local/share/nvim/site/autoload` as the place to put the `plug.vim` script. Also I had to update the `init.vim` file with this directory. After that, concer of completion (coc) plugin didn't work. I had to change the branch in the plug-vim section of the `init.vim` from `release` to `master`.
+
 
 
 
