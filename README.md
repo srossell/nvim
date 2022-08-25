@@ -62,7 +62,13 @@ I installed [vim-impaired](https://github.com/tpope/vim-unimpaired), which maps 
 
 # TROUBLESHOOTING
 
-220827. In one of my installations, I had to use the directory: `~./local/share/nvim/site/autoload` as the place to put the `plug.vim` script. Also I had to update the `init.vim` file with this directory. After that, concer of completion (coc) plugin didn't work. I had to change the branch in the plug-vim section of the `init.vim` from `release` to `master`.
+220827. 
+- I had to use the directory: `~./local/share/nvim/site/autoload` as the place to put the `plug.vim` script. Also I had to update the `init.vim` file with this directory. 
+- I had to change the conquer of completion coc branch in the `init.vim` file from `release` to `master`.
+- Before running PlugInstall, in a conda environment, I installed nodejs 16.x.x (don're remember the exact version).
+- Then I ran, from nvim `:PlugInstall` ,
+- Then changed to the `~/.local/share/nvim/pack/vimplug/coc.nvim` directory and ran the command: `npm install` (this had failed before when using the release instead of master branch for coc.
+- After the above I could run, from within nvim, `CocInstall coc-pyright`
 
 
 
