@@ -60,5 +60,9 @@ Python the package is `coc-pyright`
 
 I installed [vim-impaired](https://github.com/tpope/vim-unimpaired), which maps the square brackets "[" and "]" to iterate between, for example, buffers. To the next buffer you type `]b`, to go the previous: `[b`. The the first `[B` and to the last `]B`. It works with other things (e.g. quickfix lists), which I am unfamiliar with.
 
+# TROUBLESHOOTING
+
+In one of my installations, I had to use the directory: `~./local/share/` as the place to put the `plug.vim` script. In the same installation, the conquer of code (coc) failed with the message: `build/index.js not found`. I tried running the `npm install` in the `coc.vim` directory (It is a directory, I thought it was a file). But npm gave me an error.
+
 
 
