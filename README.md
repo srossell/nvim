@@ -70,6 +70,10 @@ I installed [vim-impaired](https://github.com/tpope/vim-unimpaired), which maps 
 - Then changed to the `~/.local/share/nvim/pack/vimplug/coc.nvim` directory and ran the command: `npm install` (this had failed before when using the release instead of master branch for coc.
 - After the above I could run, from within nvim, `CocInstall coc-pyright`
 
+220830
+The tab completion in coc works better if you use return to select the option you want. To get this working you need to add this line in your `init.vim`
+
+`inoremap <silent><expr> <cr> coc#pum#visible() ? coc#_select_confirm() : "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"`
 
 
 
