@@ -44,7 +44,7 @@ call plug#begin('~/.local/share/nvim/plugged')
 " A popular colorscheme
 Plug 'morhetz/gruvbox'
 " Intellisense engine
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'neoclide/coc.nvim', {'branch': 'master'}
 " Browse through buffers with [b and ]b
 Plug 'tpope/vim-unimpaired'
 
@@ -56,9 +56,8 @@ nmap <silent> gd <Plug>(coc-definition)
 nmap <silent> gy <Plug>(coc-type-definition)
 nmap <silent> gi <Plug>(coc-implementation)
 nmap <silent> gr <Plug>(coc-references)
+inoremap <expr> <cr> coc#pum#visible() ? coc#pum#confirm() : "\<CR>"
 " ----- FOR coc
-
-
 
 colorscheme gruvbox
 
