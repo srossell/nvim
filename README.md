@@ -75,5 +75,14 @@ The tab completion in coc works better if you use return to select the option yo
 
 `inoremap <silent><expr> <cr> coc#pum#visible() ? coc#_select_confirm() : "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"`
 
+221105
+
+I got a message telling me that I needed a newwer neovim than 0.5.0. I ran the following and it worked.
+```
+sudo add-apt-repository ppa:neovim-ppa/stable
+sudo apt-get update
+sudo apt-get install neovim
+```
+
 
 
